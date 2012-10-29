@@ -11,7 +11,8 @@ Cloud Inventory
 .. toctree::
    :maxdepth: 2
 
-.. todo   intro
+ intro
+ assign
 
 .. Indices and tables
 .. ==================
@@ -19,4 +20,5 @@ Cloud Inventory
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
+
 
