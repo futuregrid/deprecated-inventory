@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>assign &mdash; FutureGrid Cloud Code 0.1 documentation</title>
+    <title>add : &mdash; FutureGrid Cloud Code 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="FutureGrid Cloud Code 0.1 documentation" href="index.html" />
-    <link rel="next" title="add :" href="add.html" />
-    <link rel="prev" title="Welcome to FuturGrid Cloud Inventory" href="index.html" />
+    <link rel="next" title="unassign" href="unassign.html" />
+    <link rel="prev" title="assign" href="assign.html" />
  
 
 <script type="text/javascript">
@@ -69,10 +69,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="add.html" title="add :"
+          <a href="unassign.html" title="unassign"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to FuturGrid Cloud Inventory"
+          <a href="assign.html" title="assign"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Projects</a>|&nbsp;</li>
         <li><a href="https://portal.futuregrid.org/">Portal</a>|&nbsp;</li>
@@ -84,7 +84,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">assign</a><ul>
+<li><a class="reference internal" href="#">add  :</a><ul>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#list-of-parameters">List of Parameters</a></li>
@@ -94,14 +94,14 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to FuturGrid Cloud Inventory</a></p>
+  <p class="topless"><a href="assign.html"
+                        title="previous chapter">assign</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="add.html"
-                        title="next chapter">add  :</a></p>
+  <p class="topless"><a href="unassign.html"
+                        title="next chapter">unassign</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/assign.txt"
+    <li><a href="_sources/add.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -128,38 +128,61 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="assign">
-<h1>assign<a class="headerlink" href="#assign" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="add">
+<h1>add  :<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>assigns a default parameter</li>
+<li>adds an entity into the inventory</li>
 </ul>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><pre>assign type:name
-assign server:servername
-assign service:servicename
-assign prefix: prefixname</pre>
+<p>To add an object to the inventory:</p>
+<div class="highlight-python"><pre>add object-type &lt;parameters&gt;</pre>
+</div>
+<p>To add a server to the inventory:</p>
+<div class="highlight-python"><pre>add server &lt;parameters&gt;</pre>
+</div>
+<p>To add a service to the inventory:</p>
+<div class="highlight-python"><pre>add service &lt;parameters&gt;</pre>
 </div>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>The assign command defines a defualt parameter for parameters defined by other commands. Presently we are suporting the assignment of default parameters for servers,services and prefix.</p>
+<p>The assign command defines a defualt parameter for parameters defined by other commands. Presently we are suporting the assignment of default parameters for servers and serivices. First we have to specify the type whic in our case is either service or server. Than we specify the name that is used whenever we would normally define a parameter defining a server or service</p>
+<p>The add command defines a way to add entities into the inventory, an entity can either be a server or a service according to the requirements and can be invoked as shown in the usage. The add command is followed by the entity name to be added along with the list of parameters specified below.</p>
 </div>
 <div class="section" id="list-of-parameters">
 <h2>List of Parameters<a class="headerlink" href="#list-of-parameters" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>type</dt>
-<dd>the type of the parameter to be stored as a default in case no command line parameter is specified.</dd>
-<dt>name</dt>
-<dd>the value for the type field.</dd>
-</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span>
+</pre></div>
+</div>
+<p>used to add a server entity to the inventory</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">service</span>
+</pre></div>
+</div>
+<p>used to add the service entity to the inventory</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">name</span><span class="o">/-</span><span class="n">n</span>
+</pre></div>
+</div>
+<p>used to specify the name of the server or the service.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="nb">range</span><span class="o">/-</span><span class="n">r</span>
+</pre></div>
+</div>
+<p>used to specify the range over which to use the command</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">prefix</span><span class="o">/-</span><span class="n">p</span>
+</pre></div>
+</div>
+<p>used to specify the url prefix to be used for the entities to be added</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">servicename</span><span class="o">/-</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>used only with adding a service entity to specify the name of the service to be added</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>The following example adds a server into the inventory with range from 1-3 and prefix as specified using the assigned value for the field server</p>
+<p>The following example adds a server into the inventory with range from 1-3 and prefix as specified using the name as india</p>
 <div class="highlight-python"><pre>fg-inventory&gt;
-&gt; assign server:myserver
-&gt; add server -r 1-3 -p i#.iu.edu</pre>
+&gt; add server -r 1-3 -p i%.iu.edu -n india
+&gt; add service -r 1-3 -p i%.iu.edu -n india -s eucalyptus</pre>
 </div>
 </div>
 </div>
@@ -178,10 +201,10 @@ assign prefix: prefixname</pre>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="add.html" title="add :"
+          <a href="unassign.html" title="unassign"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to FuturGrid Cloud Inventory"
+          <a href="assign.html" title="assign"
              >previous</a> |</li>
         <li><a href="index.html">Projects</a>|&nbsp;</li>
         <li><a href="https://portal.futuregrid.org/">Portal</a>|&nbsp;</li>

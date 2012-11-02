@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>COMMANDS &mdash; FutureGrid Cloud Code 0.1 documentation</title>
+    <title>list: &mdash; FutureGrid Cloud Code 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,6 +25,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="FutureGrid Cloud Code 0.1 documentation" href="index.html" />
+    <link rel="next" title="Support" href="support.html" />
+    <link rel="prev" title="unassign" href="unassign.html" />
  
 
 <script type="text/javascript">
@@ -66,6 +68,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="support.html" title="Support"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="unassign.html" title="unassign"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">Projects</a>|&nbsp;</li>
         <li><a href="https://portal.futuregrid.org/">Portal</a>|&nbsp;</li>
  
@@ -74,9 +82,26 @@
 
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list:</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="unassign.html"
+                        title="previous chapter">unassign</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="support.html"
+                        title="next chapter">Support</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/documentation.txt"
+    <li><a href="_sources/list.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -103,16 +128,38 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="commands">
-<h1>COMMANDS<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>assign
-add
-add server
-add service
-list
-list server
-list service</div></blockquote>
+  <div class="section" id="list">
+<h1>list:<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>List the contents of the inventory.</li>
+</ul>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>list server
+list service</pre>
+</div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The list command is used to list the contents of the inventory. Currently the command only supports 2 types of lists namely server and service. We need to specify the entity after the list command.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span>
+</pre></div>
+</div>
+<p>used to list all the server entities in the inventory</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">service</span>
+</pre></div>
+</div>
+<p>used to list all the service entities in the inventory</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>to list all the services</p>
+<div class="highlight-python"><pre>list service</pre>
+</div>
+</div>
 </div>
 
 
@@ -128,6 +175,12 @@ list service</div></blockquote>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="support.html" title="Support"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="unassign.html" title="unassign"
+             >previous</a> |</li>
         <li><a href="index.html">Projects</a>|&nbsp;</li>
         <li><a href="https://portal.futuregrid.org/">Portal</a>|&nbsp;</li>
  
