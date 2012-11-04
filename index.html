@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to FuturGrid Cloud Inventory &mdash; FutureGrid Cloud Code 0.1 documentation</title>
+    <title>Welcome to FutureGrid Cloud Inventory &mdash; FutureGrid Cloud Code 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -78,6 +78,18 @@
 
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to FutureGrid Cloud Inventory</a><ul>
+<li><a class="reference internal" href="#cloud-inventory">Cloud Inventory</a></li>
+<li><a class="reference internal" href="#quickstart-example">Quickstart Example</a></li>
+<li><a class="reference internal" href="#list-of-commands">List of Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Next topic</h4>
   <p class="topless"><a href="assign.html"
                         title="next chapter">assign</a></p>
@@ -110,50 +122,45 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-futurgrid-cloud-inventory">
-<h1>Welcome to FuturGrid Cloud Inventory<a class="headerlink" href="#welcome-to-futurgrid-cloud-inventory" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-futuregrid-cloud-inventory">
+<h1>Welcome to FutureGrid Cloud Inventory<a class="headerlink" href="#welcome-to-futuregrid-cloud-inventory" title="Permalink to this headline">¶</a></h1>
 <p>This project is intended to provide information about a simple database to manage inventory in support of cloud seeding and cloud shifting.</p>
-<dl class="docutils">
-<dt>Cloud Inventory</dt>
-<dd><ul class="first last simple">
+<div class="section" id="cloud-inventory">
+<h2>Cloud Inventory<a class="headerlink" href="#cloud-inventory" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
 <li>A project to do bare metal and VM based dynamic provisioning</li>
 <li>Documentation: <a class="reference external" href="http://futuregrid.github.com/inventory">http://futuregrid.github.com/inventory</a></li>
 <li>Source: <a class="reference external" href="https://github.com/futuregrid/inventory">https://github.com/futuregrid/inventory</a></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
+</div>
+<div class="section" id="quickstart-example">
+<h2>Quickstart Example<a class="headerlink" href="#quickstart-example" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Note</strong> : These commands work only in the context of fg-inventory shell. They wont work on normal shell.</li>
+</ul>
+<div class="highlight-python"><pre>fg-inventory&gt; assign server:india
+&gt; add server -r 1-5 -p i%.iu.edu
+&gt; assign service:euca
+&gt; add service -r 1-5
+&gt; list server
+&gt; unassign service
+&gt; add server
+&gt; list server</pre>
+</div>
+</div>
+<div class="section" id="list-of-commands">
+<h2>List of Commands<a class="headerlink" href="#list-of-commands" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="assign.html">assign</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="assign.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="assign.html#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="assign.html#list-of-parameters">List of Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="assign.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="add.html">add  :</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="add.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add.html#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add.html#list-of-parameters">List of Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unassign.html">unassign</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unassign.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unassign.html#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unassign.html#list-of-parameters">List of Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unassign.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">list:</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="list.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html#parameters">Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="assign.html">assign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unassign.html">unassign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">list</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
+</div>
 </div>
 </div>
 
