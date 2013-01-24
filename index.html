@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to FutureGrid Cloud Inventory &mdash; FutureGrid Cloud Code 0.1 documentation</title>
+    <title>Welcome to FutureGrid Cloud Inventory &mdash; FutureGrid Inventory Code 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="FutureGrid Cloud Code 0.1 documentation" href="#" />
+    <link rel="top" title="FutureGrid Inventory Code 0.1 documentation" href="#" />
     <link rel="next" title="assign" href="assign.html" />
  
 
@@ -82,6 +82,9 @@
   <ul>
 <li><a class="reference internal" href="#">Welcome to FutureGrid Cloud Inventory</a><ul>
 <li><a class="reference internal" href="#cloud-inventory">Cloud Inventory</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#data-model">Data Model</a></li>
 <li><a class="reference internal" href="#quickstart-example">Quickstart Example</a></li>
 <li><a class="reference internal" href="#list-of-commands">List of Commands</a><ul>
 </ul>
@@ -135,23 +138,93 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In a heterogeneous cloud and HPC environment it is important to know
+which services are running on what servers. Typically such an
+environment is made up out of several clusters. Each cluster has a
+number of servers and on each server multiple services may run.</p>
+<p>To reassign servers to different clouds and to start up new services a
+simple and convenient information service is needed to track the
+current status. In addition we need a mechanism to track historical
+configurations so that we can identify at any time what servers and
+services participated in our configuration.</p>
+</div>
+<div class="section" id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<p>At this tiem we have not implemented a historical logging framework.</p>
+</div>
+<div class="section" id="data-model">
+<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+<p>The current data model is simple and reflects two types</p>
+<ul class="simple">
+<li>a &#8220;server&#8221; type that represents a compute node in a cluster</li>
+<li>a &#8220;service&#8221; type that represents a major service run on the server.</li>
+</ul>
+<p>A service type could for example represent a OpenStack compute
+service, or a HPC managementnode, or any other type.</p>
+<p>As underlaying database we have chosen mongodb as it allows us to
+easily and quickly add new entries, as well as allowing us to modify
+the data types when needed.</p>
+<p>In case the data model is changed a new version for the general
+datamodel is introduced, and the data model is documented in our
+source code.</p>
+<p>At this time we have defined the follwoing server data:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span> <span class="o">=</span> <span class="p">{</span>
+               <span class="s">&#39;ip_address&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;label&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;keyword&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;uid&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;start_time&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;stop_time&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+               <span class="s">&#39;services&#39;</span><span class="p">:[</span>
+                            <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;version&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;keyword&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;start_time&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;stop_time&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                             <span class="s">&#39;status&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                           <span class="p">}]</span>
+           <span class="p">}</span>
+</pre></div>
+</div>
+<p>Additional attributes will be added over time and as needed.</p>
+</div>
 <div class="section" id="quickstart-example">
 <h2>Quickstart Example<a class="headerlink" href="#quickstart-example" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><strong>Note</strong> : These commands work only in the context of fg-inventory shell. They wont work on normal shell.</li>
-</ul>
+<p>We have provided a simple command shell that allows us to use the
+inventory conveniently either interactively, or in scripts. A simple
+example is provided next. Here we define a server (should be renamed
+to cluster) that contains a collection of servers (1-5) with the name
+i1.iu.edi to i5.iu.edu. On each of the 5 services we are intending to
+run eucalyptus as a service:</p>
 <div class="highlight-python"><pre>fg-inventory&gt; assign server:india
 &gt; add server -r 1-5 -p i%.iu.edu
 &gt; assign service:euca
-&gt; add service -r 1-5
-&gt; list server
-&gt; unassign service
-&gt; add server
-&gt; list server</pre>
+&gt; add service -r 1-5</pre>
 </div>
+<p>To show the current inventory we simply use the command:</p>
+<div class="highlight-python"><pre>&gt; list server</pre>
+</div>
+<p>To unassign the service we can use the command:</p>
+<div class="highlight-python"><pre>&gt; unassign service</pre>
+</div>
+<p>To add them to the inventory we can use the command:</p>
+<div class="highlight-python"><pre>&gt; add server</pre>
+</div>
+<dl class="docutils">
+<dt>Now we can observe the current status</dt>
+<dd>&gt; list server</dd>
+</dl>
+<p>In future, each command will produce a log entry that allows us to
+replay the server configuration.</p>
 </div>
 <div class="section" id="list-of-commands">
 <h2>List of Commands<a class="headerlink" href="#list-of-commands" title="Permalink to this headline">¶</a></h2>
+<p>A more detailed description of the various commands is available.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="assign.html">assign</a></li>
@@ -186,7 +259,7 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Gregor von Laszewski, Fugang Wang, Hyungro Lee, Javier Diaz.
+        &copy; Copyright 2012, Gregor von Laszewski, Viplav Khadke.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
